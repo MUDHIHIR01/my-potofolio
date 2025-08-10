@@ -1,7 +1,19 @@
 import { useState } from 'react';
 
+// Define the type for the ProjectCard's props
+interface ProjectCardProps {
+  icon: string;
+  title: string;
+  description: string;
+  liveLink?: string; // The '?' makes this property optional
+  githubLink?: string; // Optional
+  apkLink?: string;    // Optional
+  storeLink?: string;  // Optional
+}
+
 // A helper component for project cards to reduce repetition
-const ProjectCard = ({ icon, title, description, liveLink, githubLink, apkLink, storeLink }) => (
+// Apply the ProjectCardProps type to the destructured props
+const ProjectCard = ({ icon, title, description, liveLink, githubLink, apkLink, storeLink }: ProjectCardProps) => (
   <div className="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 hover:shadow-xl transition-all duration-300 flex flex-col">
     <div className="flex-grow">
       <h3 className="text-xl font-bold flex items-center mb-2 text-gray-800">
